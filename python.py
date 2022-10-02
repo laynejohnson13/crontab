@@ -2,10 +2,24 @@
 import crontab
 import os
 import requests
+import sys
+import time
+import pandas as pd
 
+##importing API 
+df = pd.read_json('https://data.covid19india.org/v4/min/data.min.json')
 
-COVID19 = requests.get('https://covid-19.dataflowkit.com/v1/USA')
+##saving as csv file
+df.to_csv('csv/COVID19.csv', index = None)
 
-print(COVID19.text)
+##timestamp
+currentTime = time.time()
+listTime = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime(currentTime))
+print('The current time is: ', listTime)
 
-COVID19.to_csv(‘/Users/laynejohnson/Desktop/crontab/data_10_2_22.csv)
+##getting cwd
+cwd = os.getcwd()
+print(cwd)
+
+with open(cwd + '/updateFile_' + listTime + '.txt', 'w') as f:
+    f.write(str(df))
