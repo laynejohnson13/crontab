@@ -6,7 +6,7 @@
 
 Steps for crontab automation setup
 
-1. Create virtual machine names 'crontab'
+1. Create virtual machine names 'crontab' through GCP
 2. sudo apt-get update
 3. git clone command
-3.
+4.
