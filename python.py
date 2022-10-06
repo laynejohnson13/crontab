@@ -5,6 +5,7 @@ import requests
 import sys
 import time
 import pandas as pd
+import airflow
 
 ##importing API 
 df = pd.read_json('https://data.covid19india.org/v4/min/data.min.json')
