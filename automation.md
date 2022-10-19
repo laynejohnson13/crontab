@@ -3,6 +3,10 @@
 2) 0 22 * * SUN - Every Sunday at 10pm
 3) 0 0 1 */3 * - At midnight in every 3rd month
 
+In crontab -e:
+
+/usr/bin/python3/home/layne_johnson/crontab/python.py > log.txt 2>&1 &
+
 Steps for crontab automation setup
 
 1. Create virtual machine names 'crontab' through GCP
